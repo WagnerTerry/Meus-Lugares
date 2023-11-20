@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meus_lugares/providers/grate_places.dart';
+import 'package:meus_lugares/providers/great_places.dart';
 import 'package:meus_lugares/screens/place_form_screen.dart';
 import 'package:meus_lugares/screens/places_list_screen.dart';
 import 'package:meus_lugares/utils/app_routes.dart';
