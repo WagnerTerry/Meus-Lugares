@@ -38,10 +38,13 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
   }
 
   void _submitForm() {
-    if (!_isValidForm()) return;
+    // if (!_isValidForm()) return;
+
+    // Provider.of<GreatPlaces>(context, listen: false)
+    //     .addPlace(_titleController.text, _pickedImage!, _pickedPosition!);
 
     Provider.of<GreatPlaces>(context, listen: false)
-        .addPlace(_titleController.text, _pickedImage!, _pickedPosition!);
+        .addPlace(_titleController.text, _pickedImage!);
 
     Navigator.of(context).pop();
   }

@@ -41,27 +41,28 @@ class GreatPlaces with ChangeNotifier {
     return _items[index];
   }
 
-  Future<void> addPlace(String title, File image, LatLng position) async {
-    String address = await LocationUtil.getAddressFrom(position);
+  Future<void> addPlace(String title, File image) async {
+    //String address = await LocationUtil.getAddressFrom(position);
 
     final newPlace = Place(
-      id: Random().nextDouble().toString(),
-      title: title,
-      image: image,
-      location: PlaceLocation(
-          latitude: position.latitude,
-          longitude: position.longitude,
-          address: address),
-    );
+        id: Random().nextDouble().toString(),
+        title: title,
+        image: image,
+        location: null
+        // location: PlaceLocation(
+        //     latitude: position.latitude,
+        //     longitude: position.longitude,
+        //     address: address),
+        );
 
     _items.add(newPlace);
     DbUtil.insert('places', {
       'id': newPlace.id,
       'title': newPlace.title,
       'image': newPlace.image.path,
-      'lat': position.latitude,
-      'lng': position.longitude,
-      'address': address
+      // 'lat': position.latitude,
+      // 'lng': position.longitude,
+      // 'address': address
     });
     notifyListeners();
   }

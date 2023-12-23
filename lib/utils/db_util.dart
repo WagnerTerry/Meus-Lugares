@@ -6,8 +6,11 @@ class DbUtil {
     final dbPath = await sql.getDatabasesPath();
     return sql.openDatabase(path.join(dbPath, 'places.db'),
         onCreate: (db, version) {
+      // correto 'CREATE TABLE places (id TEXT PRIMARY KEY, title TEXT, image TEXT, lat REAL NULL, lng REAL NULL, address TEXT NULL)');
+
       return db.execute(
-          'CREATE TABLE places (id TEXT PRIMARY KEY, title TEXT, image TEXT, lat REAL NULL, lng REAL NULL, address TEXT NULL)');
+          // para funcionar o app sem localização
+          'CREATE TABLE places (id TEXT PRIMARY KEY, title TEXT, image TEXT)');
     }, version: 1);
   }
 
