@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meus_lugares/providers/great_places.dart';
+import 'package:meus_lugares/screens/place_detail_screen.dart';
 import 'package:meus_lugares/screens/place_form_screen.dart';
 import 'package:meus_lugares/screens/places_list_screen.dart';
 import 'package:meus_lugares/utils/app_routes.dart';
@@ -24,7 +25,10 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.indigo,
             visualDensity: VisualDensity.adaptivePlatformDensity),
         home: PlaceListScreen(),
-        routes: {AppRoutes.PLACE_FORM: (context) => PlaceFormScreen()},
+        routes: {
+          AppRoutes.PLACE_FORM: (context) => PlaceFormScreen(),
+          AppRoutes.PLACE_DETAIL: (context) => PlaceDetailScreen()
+        },
       ),
     );
   }
