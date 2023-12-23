@@ -77,11 +77,14 @@ class _LocationInputState extends State<LocationInput> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton.icon(
-                onPressed: _getCurrentUserLocation,
+                onPressed: () {},
+                // onPressed: _getCurrentUserLocation,
                 icon: const Icon(Icons.location_on),
                 label: const Text("Localização atual")),
             TextButton.icon(
-                onPressed: _selectOnMap,
+                onPressed: () {},
+
+                // onPressed: _selectOnMap,
                 icon: const Icon(Icons.map),
                 label: const Text('Selecione no Mapa'))
           ],
