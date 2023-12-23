@@ -55,7 +55,7 @@ class _ImageInputState extends State<ImageInput> {
               ? Image.file(
                   _storedImage!,
                   width: double.infinity,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 )
               : const Text('Nenhuma imagem!'),
         ),
